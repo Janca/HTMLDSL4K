@@ -26,4 +26,8 @@ interface HrefAttributeProvider : IElement {
     var xlinkHref: String?
         get() = this.getAttribute("xlink:href")
         set(value) = this.setAttribute("xlink:href", value)
+
+    var noHref: String?
+        get() = this.getAttribute("nohref")
+        set(value) = this.setAttribute("nohref", value)
 }

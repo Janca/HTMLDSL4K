@@ -1,10 +1,19 @@
 package janca.dsl.html.element.impl.embed
 
+import janca.dsl.html.attribute.*
 import janca.dsl.html.element.IElement
 import janca.dsl.html.element.init
 
 @Deprecated("Use 'iframe'")
-open class FrameElement : EmbeddedElement("frame", false)
+open class FrameElement :
+        EmbeddedElement("frame", false),
+        SrcAttributeProvider,
+        NameAttributeProvider,
+        NoResizeAttributeProvider,
+        ScrollingAttributeProvider,
+        MarginHeightAttributeProvider,
+        MarginWidthAttributeProvider,
+        FrameBorderAttributeProvider
 
 interface FrameElementProvider : IElement {
     @Deprecated("Use 'iframe'", ReplaceWith("addChild(IFrameElement().init(className = className, id = id, text = text, init = init))", "janca.dsl.html.element.impl.embed.IFrameElement", "janca.dsl.html.element.init"))

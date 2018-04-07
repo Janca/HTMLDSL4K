@@ -6,7 +6,7 @@
 
     <groupId>janca.dsl</groupId>
     <artifactId>htmldsl-4k</artifactId>
-    <version>0.1.021</version>
+    <version>0.1.03</version>
     <packaging>jar</packaging>
 
     <name>janca.dsl htmldsl-4k</name>
