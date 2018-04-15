@@ -9,7 +9,7 @@ interface FormatElementProvider :
         BiDirectionIsolationElementProvider,
         BiDirectionOverrideElementProvider,
         BigElementProvider,
-        BlockquoteElementProvider,
+        BlockQuoteElementProvider,
         BoldElementProvider,
         CenterElementProvider,
         CiteElementProvider,

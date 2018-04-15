@@ -2,6 +2,7 @@ package janca.dsl
 
 import janca.dsl.html.HTMLString
 import janca.dsl.html.element.doctype
+import janca.dsl.html.element.impl.meta.put
 import janca.dsl.html.element.impl.struct.DivElement
 import janca.dsl.html.provider.FlowContentElementProvider
 
@@ -14,11 +15,30 @@ fun main(vararg args: String) {
                 html {
                     head {
                         style {
-                            text("* { box-sizing:border-box; margin:0; padding:0; }") //todo make it easier to add properties
-                            text("body { margin:.25rem; }")
-                            text(".container { width:100%; display:flex; align-content:space-evenly; }")
-                            text(".container > * { text-align:center; }")
-                            text(".container > div { border:1px solid orange; margin:2px; }")
+                            addRule("*") {
+                                put("box-sizing", "border-box")
+                                put("margin", "0")
+                                put("padding", "0")
+                            }
+
+                            addRule("body") {
+                                put("margin", ".25rem")
+                            }
+
+                            addRule(".container") {
+                                put("width", "100%")
+                                put("display", "flex")
+                                put("align-content", "space-evenly")
+
+                                finer(">*") {
+                                    put("text-align", "center")
+                                }
+
+                                finer(">div") {
+                                    put("border", "1px solid orange")
+                                    put("margin", "2px")
+                                }
+                            }
                         }
                     }
 

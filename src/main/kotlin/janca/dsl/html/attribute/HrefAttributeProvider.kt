@@ -3,15 +3,9 @@ package janca.dsl.html.attribute
 import janca.dsl.html.element.IElement
 
 interface HrefAttributeProvider : IElement {
-    var href: String?
+    var hrefAttr: String?
         get() = this.getAttribute("href")
         set(value) = this.setAttribute("href", value)
-
-
-    var target: String?
-        get() = this.getAttribute("target")
-        set(value) = this.setAttribute("target", value)
-
 
     var xlinkShow: String?
         get() = this.getAttribute("xlink:show")
@@ -24,8 +18,8 @@ interface HrefAttributeProvider : IElement {
 
 
     var xlinkHref: String?
-        get() = this.getAttribute("xlink:href")
-        set(value) = this.setAttribute("xlink:href", value)
+        get() = this.getAttribute("xlink:hrefAttr")
+        set(value) = this.setAttribute("xlink:hrefAttr", value)
 
     var noHref: String?
         get() = this.getAttribute("nohref")

@@ -40,6 +40,9 @@ fun main(vararg args: String) {
                     }
 
                     body {
+                        script {
+                            src
+                        }
                         setStyle("margin:1.25rem 2rem;")
                         h1("HTMLDSL4K Sample Output")
                         p {
@@ -58,9 +61,9 @@ fun main(vararg args: String) {
                             li {
                                 span {
                                     text("Attributes relevant to an element will be available as a field in that element. For example, ")
-                                    code("href")
+                                    code("hrefAttr")
                                     text(" is available for the AnchorElement but not available by field in the ImageElement, although if desired, and with any attribute, it can be set with ")
-                                    code("setAttribute(\"href\",&nbsp;\"your&nbsp;attribute&nbsp;value\")")
+                                    code("setAttribute(\"hrefAttr\",&nbsp;\"your&nbsp;attribute&nbsp;value\")")
                                     text(".")
                                 }
                             }
@@ -79,7 +82,7 @@ fun main(vararg args: String) {
                             a(className = "text-primary") {
                                 text("Like so")
 
-                                this.href = "#"
+                                this.hrefAttr = "#"
                                 this["onclick"] = "testAlert();"
                             }
                             text(".")
@@ -130,9 +133,9 @@ fun main(vararg args: String) {
                                         li {
                                             span {
                                                 text("Attributes relevant to an element will be available as a field in that element. For example, ")
-                                                code("href")
+                                                code("hrefAttr")
                                                 text(" is available for the AnchorElement but not available by field in the ImageElement, although if desired, and with any attribute, it can be set with ")
-                                                code("setAttribute(\"href\",&nbsp;\"your&nbsp;attribute&nbsp;value\")")
+                                                code("setAttribute(\"hrefAttr\",&nbsp;\"your&nbsp;attribute&nbsp;value\")")
                                                 text(".")
                                             }
                                         }
@@ -151,7 +154,7 @@ fun main(vararg args: String) {
                                         a(className = "text-primary") {
                                             text("Like so")
 
-                                            this.href = "#"
+                                            this.hrefAttr = "#"
                                             this["onclick"] = "testAlert();"
                                         }
                                         text(".")
@@ -202,9 +205,9 @@ fun main(vararg args: String) {
                                                         li {
                                                             span {
                                                                 text("Attributes relevant to an element will be available as a field in that element. For example, ")
-                                                                code("href")
+                                                                code("hrefAttr")
                                                                 text(" is available for the AnchorElement but not available by field in the ImageElement, although if desired, and with any attribute, it can be set with ")
-                                                                code("setAttribute(\"href\",&nbsp;\"your&nbsp;attribute&nbsp;value\")")
+                                                                code("setAttribute(\"hrefAttr\",&nbsp;\"your&nbsp;attribute&nbsp;value\")")
                                                                 text(".")
                                                             }
                                                         }
@@ -223,7 +226,7 @@ fun main(vararg args: String) {
                                                         a(className = "text-primary") {
                                                             text("Like so")
 
-                                                            this.href = "#"
+                                                            this.hrefAttr = "#"
                                                             this["onclick"] = "testAlert();"
                                                         }
                                                         text(".")
