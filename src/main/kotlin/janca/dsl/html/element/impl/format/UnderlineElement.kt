@@ -8,5 +8,10 @@ import janca.dsl.html.provider.PhrasingContentElementProvider
 open class UnderlineElement : FormattingElement("u", false), PhrasingContentElementProvider
 
 interface UnderlineElementProvider : IElement {
-    fun u(className: String? = null, id: String? = null, text: String? = null, init: (UnderlineElement.() -> Unit)? = null) = addChild(UnderlineElement().init(className = className, id = id, text = text, init = init))
+    fun u(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (UnderlineElement.() -> Unit)? = null
+    ) = addChild(UnderlineElement().init(className = className, id = id, text = text, init = init))
 }

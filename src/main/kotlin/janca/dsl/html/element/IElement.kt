@@ -8,7 +8,7 @@ annotation class ElementDsl
 interface IElement {
     val tagName: String
     val isAutoClosing: Boolean
-    fun addChild(element: IElement)
+    fun addChild(element: IElement): IElement
     fun hasChildren(): Boolean
     fun getChildren(): List<IElement>
     fun <T> getAttribute(token: String): T?

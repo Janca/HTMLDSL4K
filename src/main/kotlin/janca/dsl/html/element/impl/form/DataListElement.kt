@@ -6,5 +6,10 @@ import janca.dsl.html.provider.PhrasingContentElementProvider
 
 open class DataListElement : IFormElement("datalist", false), PhrasingContentElementProvider, OptionElementProvider
 interface DataListElementProvider : IElement {
-    fun datalist(className: String? = null, id: String? = null, text: String? = null, init: (DataListElement.() -> Unit)? = null) = addChild(DataListElement().init(className = className, id = id, text = text, init = init))
+    fun datalist(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (DataListElement.() -> Unit)? = null
+    ) = addChild(DataListElement().init(className = className, id = id, text = text, init = init))
 }

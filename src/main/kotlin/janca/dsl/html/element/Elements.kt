@@ -9,4 +9,5 @@ fun htmlTemplate(init: DSLTemplateElement.() -> Unit): DSLTemplateElement = DSLT
 fun html(init: (@ElementDsl HTMLElement.() -> Unit)): HTMLElement = HTMLElement().also(init)
 
 @ElementDsl
-fun doctype(type: String = "html", init: (@ElementDsl DocTypeElement.() -> Unit)): DocTypeElement = DocTypeElement(type).also(init)
+fun doctype(type: String = "html", init: (@ElementDsl DocTypeElement.() -> Unit)): DocTypeElement =
+    DocTypeElement(type).also(init)

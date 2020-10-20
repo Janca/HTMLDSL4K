@@ -8,8 +8,13 @@ import janca.dsl.html.element.init
 import janca.dsl.html.provider.PhrasingContentElementProvider
 
 open class DeleteElement : FormattingElement("del", false), PhrasingContentElementProvider, ParagraphElementProvider,
-        CiteAttributeProvider, DateTimeAttributeProvider
+    CiteAttributeProvider, DateTimeAttributeProvider
 
 interface DeleteElementProvider : IElement {
-    fun del(className: String? = null, id: String? = null, text: String? = null, init: (DeleteElement.() -> Unit)? = null) = addChild(DeleteElement().init(className = className, id = id, text = text, init = init))
+    fun del(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (DeleteElement.() -> Unit)? = null
+    ) = addChild(DeleteElement().init(className = className, id = id, text = text, init = init))
 }

@@ -6,9 +6,14 @@ import janca.dsl.html.element.IElement
 import janca.dsl.html.element.init
 
 open class OptGroupElement : IFormElement("optgroup", false), OptionElementProvider,
-        DisabledAttributeProvider,
-        LabelAttributeProvider
+    DisabledAttributeProvider,
+    LabelAttributeProvider
 
 interface OptGroupElementProvider : IElement {
-    fun optgroup(className: String? = null, id: String? = null, text: String? = null, init: (OptGroupElement.() -> Unit)? = null) = addChild(OptGroupElement().init(className = className, id = id, text = text, init = init))
+    fun optgroup(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (OptGroupElement.() -> Unit)? = null
+    ) = addChild(OptGroupElement().init(className = className, id = id, text = text, init = init))
 }

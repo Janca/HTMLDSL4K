@@ -6,5 +6,11 @@ import janca.dsl.html.provider.PhrasingContentElementProvider
 
 open class SpanElement : StructuralElement("span", false), PhrasingContentElementProvider
 interface SpanElementProvider : IElement {
-    fun span(text: String? = null, className: String? = null, id: String? = null, init: (SpanElement.() -> Unit)? = null) = addChild(SpanElement().init(className = className, id = id, text = text, init = init))
+    fun span(
+        text: String? = null,
+        className: String? = null,
+        id: String? = null,
+        init: (SpanElement.() -> Unit)? = null
+    ) =
+        addChild(SpanElement().init(className = className, id = id, text = text, init = init))
 }

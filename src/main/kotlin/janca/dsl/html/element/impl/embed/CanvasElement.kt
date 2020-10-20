@@ -9,13 +9,18 @@ import janca.dsl.html.element.impl.struct.AnchorElementProvider
 import janca.dsl.html.element.init
 
 open class CanvasElement :
-        EmbeddedElement("canvas", false),
-        AnchorElementProvider,
-        ButtonElementProvider,
-        InputElementProvider,
-        HeightAttributeProvider,
-        WidthAttributeProvider
+    EmbeddedElement("canvas", false),
+    AnchorElementProvider,
+    ButtonElementProvider,
+    InputElementProvider,
+    HeightAttributeProvider,
+    WidthAttributeProvider
 
 interface CanvasElementProvider : IElement {
-    fun canvas(className: String? = null, id: String? = null, text: String? = null, init: (CanvasElement.() -> Unit)? = null) = addChild(CanvasElement().init(className = className, id = id, text = text, init = init))
+    fun canvas(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (CanvasElement.() -> Unit)? = null
+    ) = addChild(CanvasElement().init(className = className, id = id, text = text, init = init))
 }

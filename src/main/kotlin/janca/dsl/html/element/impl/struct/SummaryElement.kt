@@ -7,6 +7,12 @@ import janca.dsl.html.provider.PhrasingContentElementProvider
 
 open class SummaryElement : StructuralElement("summary", false), PhrasingContentElementProvider, HeadingElementProvider
 interface SummaryElementProvider : IElement {
-    fun summary(className: String? = null, id: String? = null, text: String? = null, init: (SummaryElement.() -> Unit)? = null) = addChild(SummaryElement().init(className = className, id = id, text = text, init = init))
+    fun summary(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (SummaryElement.() -> Unit)? = null
+    ) =
+        addChild(SummaryElement().init(className = className, id = id, text = text, init = init))
 }
 

@@ -5,7 +5,8 @@ import janca.dsl.html.attribute.GlobalAttributeProvider
 import janca.dsl.html.provider.SimpleTextProvider
 import java.util.*
 
-open class Element(override val tagName: String, override val isAutoClosing: Boolean = false) : IElement, GlobalAttributeProvider, SimpleTextProvider {
+open class Element(override val tagName: String, override val isAutoClosing: Boolean = false) : IElement,
+    GlobalAttributeProvider, SimpleTextProvider {
     private val children: LinkedList<IElement> by lazy { LinkedList<IElement>() }
     private val _attributes: MutableMap<String, Any> by lazy { TreeMap<String, Any>(String.CASE_INSENSITIVE_ORDER) }
 
@@ -24,7 +25,10 @@ open class Element(override val tagName: String, override val isAutoClosing: Boo
         setStyle(styleBuilder.toString())
     }
 
-    override fun addChild(element: IElement) = children.synchronized { add(element) }
+    override fun addChild(element: IElement): IElement {
+        children.synchronized { add(element) }
+        return element
+    }
 
     override fun hasChildren(): Boolean = children.isNotEmpty()
 
@@ -53,12 +57,19 @@ open class Element(override val tagName: String, override val isAutoClosing: Boo
 
     override fun hasAttributes(): Boolean = _attributes.isNotEmpty()
 
+    operator fun plus(text: String) = addChild(TextElement(text))
     operator fun plus(element: IElement) = addChild(element)
     operator fun <T> get(token: String): T? = getAttribute(token)
     operator fun set(token: String, value: Any?) = setAttribute(token, value)
+
 }
 
-fun <T : Element> T.init(text: String? = null, className: String? = null, id: String? = null, init: (T.() -> Unit)? = null): T {
+fun <T : Element> T.init(
+    text: String? = null,
+    className: String? = null,
+    id: String? = null,
+    init: (T.() -> Unit)? = null
+): T {
     text?.let {
         this.text(text)
     }

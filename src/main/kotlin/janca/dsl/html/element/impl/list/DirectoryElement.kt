@@ -6,9 +6,21 @@ import janca.dsl.html.element.init
 
 @Deprecated("Use 'ul'")
 open class DirectoryElement : ListElement("dir", false),
-        CompactAttributeProvider
+    CompactAttributeProvider
 
 interface DirectoryElementProvider : IElement {
-    @Deprecated("Use 'ul'", ReplaceWith("addChild(UnorderedListElement().init(className = className, id = id, text = text, init = init))", "janca.dsl.html.element.impl.list.UnorderedListElement", "janca.dsl.html.element.init"))
-    fun dir(className: String? = null, id: String? = null, text: String? = null, init: (DirectoryElement.() -> Unit)? = null) = addChild(DirectoryElement().init(className = className, id = id, text = text, init = init))
+    @Deprecated(
+        "Use 'ul'",
+        ReplaceWith(
+            "addChild(UnorderedListElement().init(className = className, id = id, text = text, init = init))",
+            "janca.dsl.html.element.impl.list.UnorderedListElement",
+            "janca.dsl.html.element.init"
+        )
+    )
+    fun dir(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (DirectoryElement.() -> Unit)? = null
+    ) = addChild(DirectoryElement().init(className = className, id = id, text = text, init = init))
 }

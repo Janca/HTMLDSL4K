@@ -6,7 +6,7 @@ import janca.dsl.html.element.impl.list.OrderedListElementProvider
 import janca.dsl.html.element.impl.list.UnorderedListElementProvider
 
 interface ListElementProvider :
-        UnorderedListElementProvider,
-        OrderedListElementProvider,
-        MenuElementProvider,
-        DefinitionDescriptionElementProvider
+    UnorderedListElementProvider,
+    OrderedListElementProvider,
+    MenuElementProvider,
+    DefinitionDescriptionElementProvider

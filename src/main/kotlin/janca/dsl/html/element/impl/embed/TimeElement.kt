@@ -6,8 +6,13 @@ import janca.dsl.html.element.init
 import janca.dsl.html.provider.PhrasingContentElementProvider
 
 open class TimeElement : EmbeddedElement("time", false), PhrasingContentElementProvider,
-        DateTimeAttributeProvider
+    DateTimeAttributeProvider
 
 interface TimeElementProvider : IElement {
-    fun time(className: String? = null, id: String? = null, text: String? = null, init: (TimeElement.() -> Unit)? = null) = addChild(TimeElement().init(className = className, id = id, text = text, init = init))
+    fun time(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (TimeElement.() -> Unit)? = null
+    ) = addChild(TimeElement().init(className = className, id = id, text = text, init = init))
 }

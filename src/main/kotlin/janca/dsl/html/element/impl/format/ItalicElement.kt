@@ -6,5 +6,10 @@ import janca.dsl.html.provider.PhrasingContentElementProvider
 
 open class ItalicElement : FormattingElement("i", false), PhrasingContentElementProvider
 interface ItalicElementProvider : IElement {
-    fun i(className: String? = null, id: String? = null, text: String? = null, init: (ItalicElement.() -> Unit)? = null) = addChild(ItalicElement().init(className = className, id = id, text = text, init = init))
+    fun i(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (ItalicElement.() -> Unit)? = null
+    ) = addChild(ItalicElement().init(className = className, id = id, text = text, init = init))
 }

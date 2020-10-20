@@ -10,5 +10,10 @@ open class StrikeElement : FormattingElement("strike", false), PhrasingContentEl
 interface StrikeElementProvider : IElement {
     @Suppress("DeprecatedCallableAddReplaceWith")
     @Deprecated("Use 'del' for deleted contents 's' for all other use cases.")
-    fun strike(className: String? = null, id: String? = null, text: String? = null, init: (StrikeElement.() -> Unit)? = null) = addChild(StrikeElement().init(className = className, id = id, text = text, init = init))
+    fun strike(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (StrikeElement.() -> Unit)? = null
+    ) = addChild(StrikeElement().init(className = className, id = id, text = text, init = init))
 }

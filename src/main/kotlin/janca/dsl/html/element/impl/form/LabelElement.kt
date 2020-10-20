@@ -7,9 +7,14 @@ import janca.dsl.html.element.init
 import janca.dsl.html.provider.PhrasingContentElementProvider
 
 open class LabelElement : IFormElement("label", false), PhrasingContentElementProvider,
-        ForAttributeProvider,
-        FormActionAttributeProvider
+    ForAttributeProvider,
+    FormActionAttributeProvider
 
 interface LabelElementProvider : IElement {
-    fun label(className: String? = null, id: String? = null, text: String? = null, init: (LabelElement.() -> Unit)? = null) = addChild(LabelElement().init(className = className, id = id, text = text, init = init))
+    fun label(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (LabelElement.() -> Unit)? = null
+    ) = addChild(LabelElement().init(className = className, id = id, text = text, init = init))
 }

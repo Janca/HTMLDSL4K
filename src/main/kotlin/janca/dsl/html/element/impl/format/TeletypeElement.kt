@@ -10,5 +10,10 @@ open class TeletypeElement : FormattingElement("tt", false), PhrasingContentElem
 interface TeletextElementProvider : IElement {
     @Suppress("DeprecatedCallableAddReplaceWith")
     @Deprecated("Try  'code', 'kbd', 'var', or 'samp'")
-    fun tt(className: String? = null, id: String? = null, text: String? = null, init: (TeletypeElement.() -> Unit)? = null) = addChild(TeletypeElement().init(className = className, id = id, text = text, init = init))
+    fun tt(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (TeletypeElement.() -> Unit)? = null
+    ) = addChild(TeletypeElement().init(className = className, id = id, text = text, init = init))
 }

@@ -6,5 +6,6 @@ import janca.dsl.html.provider.PhrasingContentElementProvider
 
 open class BoldElement : FormattingElement("b", false), PhrasingContentElementProvider
 interface BoldElementProvider : IElement {
-    fun b(className: String? = null, id: String? = null, text: String? = null, init: (BoldElement.() -> Unit)? = null) = addChild(BoldElement().init(className = className, id = id, text = text, init = init))
+    fun b(text: String? = null, className: String? = null, id: String? = null, init: (BoldElement.() -> Unit)? = null) =
+        addChild(BoldElement().init(className = className, id = id, text = text, init = init))
 }

@@ -10,5 +10,6 @@ class DocTypeElement(docType: String) : Element("!DOCTYPE", true), HTMLElementPr
 }
 
 interface DocTypeElementProvider : IElement {
-    fun doctype(type: String = "html", init: (DocTypeElement.() -> Unit)? = null) = addChild(DocTypeElement(type).also { init?.invoke(it) })
+    fun doctype(type: String = "html", init: (DocTypeElement.() -> Unit)? = null) =
+        addChild(DocTypeElement(type).also { init?.invoke(it) })
 }

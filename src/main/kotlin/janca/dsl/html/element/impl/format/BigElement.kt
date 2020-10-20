@@ -7,5 +7,10 @@ import janca.dsl.html.element.init
 open class BigElement : FormattingElement("big", false)
 
 interface BigElementProvider : IElement {
-    fun big(className: String? = null, id: String? = null, text: String? = null, init: (BigElement.() -> Unit)? = null) = addChild(BigElement().init(className = className, id = id, text = text, init = init))
+    fun big(
+        text: String? = null,
+        className: String? = null,
+        id: String? = null,
+        init: (BigElement.() -> Unit)? = null
+    ) = addChild(BigElement().init(className = className, id = id, text = text, init = init))
 }

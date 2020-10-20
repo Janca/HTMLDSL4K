@@ -2,15 +2,19 @@ package janca.dsl
 
 import janca.dsl.html.HTMLString
 import janca.dsl.html.element.doctype
-import janca.dsl.html.element.impl.meta.put
+import janca.dsl.html.element.impl.meta.css.put
 import janca.dsl.html.element.impl.struct.DivElement
 import janca.dsl.html.provider.FlowContentElementProvider
 
-fun FlowContentElementProvider.container(init: DivElement.() -> Unit) = addChild(DivElement().also { it.className = "container" }.also(init))
-fun FlowContentElementProvider.column(widthPercent: Int, init: DivElement.() -> Unit) = addChild(DivElement().also { it.setStyle("width:$widthPercent%;padding:1.25rem 2rem;") }.also(init))
+fun FlowContentElementProvider.container(init: DivElement.() -> Unit) =
+    addChild(DivElement().also { it.className = "container" }.also(init))
+
+fun FlowContentElementProvider.column(widthPercent: Int, init: DivElement.() -> Unit) =
+    addChild(DivElement().also { it.setStyle("width:$widthPercent%;padding:1.25rem 2rem;") }.also(init))
 
 fun main(vararg args: String) {
-    println(HTMLString(
+    println(
+        HTMLString(
             doctype {
                 html {
                     head {
@@ -30,11 +34,11 @@ fun main(vararg args: String) {
                                 put("display", "flex")
                                 put("align-content", "space-evenly")
 
-                                finer(">*") {
+                                nest(">*") {
                                     put("text-align", "center")
                                 }
 
-                                finer(">div") {
+                                nest(">div") {
                                     put("border", "1px solid orange")
                                     put("margin", "2px")
                                 }
@@ -71,5 +75,5 @@ fun main(vararg args: String) {
                     }
                 }
             }
-    ))
+        ))
 }

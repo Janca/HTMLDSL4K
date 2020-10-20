@@ -7,5 +7,6 @@ import janca.dsl.html.provider.FlowContentElementProvider
 
 open class DivElement : StructuralElement("div", false), FlowContentElementProvider, AlignAttributeProvider
 interface DivElementProvider : IElement {
-    fun div(className: String? = null, id: String? = null, text: String? = null, init: DivElement.() -> Unit = {}) = addChild(DivElement().init(className = className, id = id, text = text, init = init))
+    fun div(className: String? = null, id: String? = null, text: String? = null, init: DivElement.() -> Unit = {}) =
+        addChild(DivElement().init(className = className, id = id, text = text, init = init))
 }

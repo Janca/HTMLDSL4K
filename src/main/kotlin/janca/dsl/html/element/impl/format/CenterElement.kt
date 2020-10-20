@@ -7,5 +7,10 @@ import janca.dsl.html.element.init
 open class CenterElement : FormattingElement("center", false)
 
 interface CenterElementProvider : IElement {
-    fun center(className: String? = null, id: String? = null, text: String? = null, init: (CenterElement.() -> Unit)? = null) = addChild(CenterElement().init(className = className, id = id, text = text, init = init))
+    fun center(
+        className: String? = null,
+        id: String? = null,
+        text: String? = null,
+        init: (CenterElement.() -> Unit)? = null
+    ) = addChild(CenterElement().init(className = className, id = id, text = text, init = init))
 }
